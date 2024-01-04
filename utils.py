@@ -14,5 +14,5 @@ def sanitize_scan_results(scan_results):
 
 def check_production_endpoints(scan_results):
     for host, scan_result in scan_results.items():
-        if scan_result['ports']:
+        if scan_result['state']['state'] == 'up':
             print(f"The production endpoint {host} is reachable.")
